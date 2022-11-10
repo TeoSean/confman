@@ -66,14 +66,14 @@ match COMMAND:
 
 
     case 'import':
-        infile = sys.argv[3]
+        infile = TARGET
         if not os.path.exists(CONFIG_DIR): 
             print(f'Error: Necessary files not found. Run "{sys.argv[0]} init default" to get started.')
             exit(1)
         # os.chdir(CONFIG_DIR)
-        if not TARGET in os.listdir(CONFIG_DIR):
-            print(f'Error: profile {TARGET} not found. Run "{sys.argv[0]} init {TARGET}" to copy your current config to profile {TARGET}')
-            exit()
+        #if not TARGET in os.listdir(CONFIG_DIR):
+            #print(f'Error: profile {TARGET} not found. Run "{sys.argv[0]} init {TARGET}" to copy your current config to profile {TARGET}')
+            #exit()
         
         logsys(f'unzip {infile} -d {CONFIG_DIR}')
         print('Profile has been imported.')
